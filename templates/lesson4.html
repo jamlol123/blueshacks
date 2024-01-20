@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 4: Interacting with Strangers</title>
+    <style>
+        .question-container {
+            display: flex;
+            align-items: center;
+        }
+        .question {
+            flex: 1;
+        }
+        .image {
+            flex: 0.2;
+            padding-left: 10px;
+        }
+        .image img {
+            max-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lesson 4: Interacting with Strangers</h1>
+    <p>Interacting with strangers can be a common occurrence in various situations. Here are some tips for effective communication:</p>
+    <ul>
+        <li>Start with a polite greeting.</li>
+        <li>Be open and approachable.</li>
+        <li>Use active listening skills.</li>
+        <li>Respect personal boundaries.</li>
+    </ul>
+    <p>Remember, positive interactions with strangers can lead to meaningful connections.</p>
+
+    <!-- Multiple Choice Questions -->
+    <div class="question-container">
+        <div class="question">
+            <p>Quiz Question 1: What is an important aspect of interacting with strangers?</p>
+            <form>
+                <input type="radio" name="question1" value="A"> Avoid eye contact<br>
+                <input type="radio" name="question1" value="B"> Start with a polite greeting<br>
+                <input type="radio" name="question1" value="C"> Ignore them<br>
+                <input type="radio" name="question1" value="D"> Share personal information<br>
+            </form>
+            <p id="answer1"></p>
+        </div>
+        <div class="image">
+            <img id="image_q1" style="display:none;" src="https://th.bing.com/th/id/OIP.CPK1ANm7nhe0n8ZVgQgFlQHaHG?rs=1&pid=ImgDetMain" alt="Correct Image">
+        </div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">
+            <p>Quiz Question 2: What should you do to be approachable when interacting with strangers?</p>
+            <form>
+                <input type="radio" name="question2" value="A"> Avoid making eye contact<br>
+                <input type="radio" name="question2" value="B"> Be open and approachable<br>
+                <input type="radio" name="question2" value="C"> Use formal language<br>
+                <input type="radio" name="question2" value="D"> Be dismissive<br>
+            </form>
+            <p id="answer2"></p>
+        </div>
+        <div class="image">
+            <img id="image_q2" style="display:none;" src="https://th.bing.com/th/id/OIP.CPK1ANm7nhe0n8ZVgQgFlQHaHG?rs=1&pid=ImgDetMain" alt="Correct Image">
+        </div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">
+            <p>Quiz Question 3: What is important in respecting personal boundaries when interacting with strangers?</p>
+            <form>
+                <input type="radio" name="question3" value="A"> Invade their personal space<br>
+                <input type="radio" name="question3" value="B"> Respect personal boundaries<br>
+                <input type="radio" name="question3" value="C"> Share personal information freely<br>
+                <input type="radio" name="question3" value="D"> Be intrusive<br>
+            </form>
+            <p id="answer3"></p>
+        </div>
+        <div class="image">
+            <img id="image_q3" style="display:none;" src="https://th.bing.com/th/id/OIP.CPK1ANm7nhe0n8ZVgQgFlQHaHG?rs=1&pid=ImgDetMain" alt="Correct Image">
+        </div>
+    </div>
+
+    <!-- Button to Check Answers -->
+    <button onclick="checkAnswers()">Check Answers</button>
+
+    <!-- Button to Go Back to Homepage -->
+    <a href="/">Back to Homepage</a>
+
+    <script>
+        function checkAnswers() {
+            var answer1 = document.querySelector('input[name="question1"]:checked').value;
+            var answer2 = document.querySelector('input[name="question2"]:checked').value;
+            var answer3 = document.querySelector('input[name="question3"]:checked').value;
+
+            var answer1Feedback = answer1 === "B" ? "Correct!" : "Incorrect. Starting with a polite greeting is important when interacting with strangers.";
+            var answer2Feedback = answer2 === "B" ? "Correct!" : "Incorrect. Being open and approachable is essential when interacting with strangers.";
+            var answer3Feedback = answer3 === "B" ? "Correct!" : "Incorrect. Respecting personal boundaries is important when interacting with strangers.";
+
+            document.getElementById("answer1").innerHTML = "Quiz Question 1: " + answer1Feedback;
+            document.getElementById("answer2").innerHTML = "Quiz Question 2: " + answer2Feedback;
+            document.getElementById("answer3").innerHTML = "Quiz Question 3: " + answer3Feedback;
+
+            // Display the image next to the correctly answered question
+            if (answer1 === "B") {
+                document.getElementById("image_q1").style.display = "inline";
+            }
+            if (answer2 === "B") {
+                document.getElementById("image_q2").style.display = "inline";
+            }
+            if (answer3 === "B") {
+                document.getElementById("image_q3").style.display = "inline";
+            }
+        }
+    </script>
+</body>
+</html>

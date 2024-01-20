@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 3: Interacting with a Professional</title>
+    <style>
+        .question-container {
+            display: flex;
+            align-items: center;
+        }
+        .question {
+            flex: 1;
+        }
+        .image {
+            flex: 0.2;
+            padding-left: 10px;
+        }
+        .image img {
+            max-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lesson 3: Interacting with a Professional</h1>
+    <p>Interacting with professionals, such as doctors or lawyers, requires a respectful and formal approach. Here are some tips for effective communication:</p>
+    <ul>
+        <li>Address them with their appropriate title (e.g., Dr., Esq.).</li>
+        <li>Use formal and respectful language.</li>
+        <li>Ask questions relevant to their expertise.</li>
+    </ul>
+    <p>Remember, professionals appreciate professionalism and respect in their interactions.</p>
+
+    <!-- Multiple Choice Questions -->
+    <div class="question-container">
+        <div class="question">
+            <p>Quiz Question 1: How should you address a professional?</p>
+            <form>
+                <input type="radio" name="question1" value="A"> Use casual language<br>
+                <input type="radio" name="question1" value="B"> Use formal and respectful language<br>
+                <input type="radio" name="question1" value="C"> Avoid addressing them<br>
+                <input type="radio" name="question1" value="D"> Use their first name<br>
+            </form>
+            <p id="answer1"></p>
+        </div>
+        <div class="image">
+            <img id="image_q1" style="display:none;" src="https://th.bing.com/th/id/OIP.CPK1ANm7nhe0n8ZVgQgFlQHaHG?rs=1&pid=ImgDetMain" alt="Correct Image">
+        </div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">
+            <p>Quiz Question 2: What type of language should you use when interacting with a professional?</p>
+            <form>
+                <input type="radio" name="question2" value="A"> Casual language<br>
+                <input type="radio" name="question2" value="B"> Formal and respectful language<br>
+                <input type="radio" name="question2" value="C"> Avoid using any language<br>
+                <input type="radio" name="question2" value="D"> Slang terms<br>
+            </form>
+            <p id="answer2"></p>
+        </div>
+        <div class="image">
+            <img id="image_q2" style="display:none;" src="https://th.bing.com/th/id/OIP.CPK1ANm7nhe0n8ZVgQgFlQHaHG?rs=1&pid=ImgDetMain" alt="Correct Image">
+        </div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">
+            <p>Quiz Question 3: What should your questions to a professional be?</p>
+            <form>
+                <input type="radio" name="question3" value="A"> Unrelated to their expertise<br>
+                <input type="radio" name="question3" value="B"> Relevant to their expertise<br>
+                <input type="radio" name="question3" value="C"> Avoid asking questions<br>
+                <input type="radio" name="question3" value="D"> Personal questions<br>
+            </form>
+            <p id="answer3"></p>
+        </div>
+        <div class="image">
+            <img id="image_q3" style="display:none;" src="https://th.bing.com/th/id/OIP.CPK1ANm7nhe0n8ZVgQgFlQHaHG?rs=1&pid=ImgDetMain" alt="Correct Image">
+        </div>
+    </div>
+
+    <!-- Button to Check Answers -->
+    <button onclick="checkAnswers()">Check Answers</button>
+
+    <!-- Button to Go Back to Homepage -->
+    <a href="/">Back to Homepage</a>
+
+    <script>
+        function checkAnswers() {
+            var answer1 = document.querySelector('input[name="question1"]:checked').value;
+            var answer2 = document.querySelector('input[name="question2"]:checked').value;
+            var answer3 = document.querySelector('input[name="question3"]:checked').value;
+
+            var answer1Feedback = answer1 === "B" ? "Correct!" : "Incorrect. You should use formal and respectful language when addressing a professional.";
+            var answer2Feedback = answer2 === "B" ? "Correct!" : "Incorrect. You should use formal and respectful language when interacting with a professional.";
+            var answer3Feedback = answer3 === "B" ? "Correct!" : "Incorrect. Your questions to a professional should be relevant to their expertise.";
+
+            document.getElementById("answer1").innerHTML = "Quiz Question 1: " + answer1Feedback;
+            document.getElementById("answer2").innerHTML = "Quiz Question 2: " + answer2Feedback;
+            document.getElementById("answer3").innerHTML = "Quiz Question 3: " + answer3Feedback;
+
+            // Display the image next to the correctly answered question
+            if (answer1 === "B") {
+                document.getElementById("image_q1").style.display = "inline";
+            }
+            if (answer2 === "B") {
+                document.getElementById("image_q2").style.display = "inline";
+            }
+            if (answer3 === "B") {
+                document.getElementById("image_q3").style.display = "inline";
+            }
+        }
+    </script>
+</body>
+</html>

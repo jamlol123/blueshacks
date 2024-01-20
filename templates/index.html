@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot Lessons</title>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        #lessons {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+        #chatbox {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 80%;
+        }
+        #userInput {
+            width: 80%;
+        }
+        #sendButton {
+            width: 80%;
+            margin-top: 10px;
+        }
+        #practice-text {
+            text-align: left;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Welcome to Chatbot Lessons</h1>
+        <p>Chatbot Lessons is an interactive platform designed to help you improve your communication skills in various scenarios. Our lessons cover different aspects of communication, from interacting with teachers to engaging with strangers.</p>
+
+        <p>Explore the lessons below and enhance your communication skills:</p>
+
+        <div id="lessons">
+            <button onclick="window.location.href = '/lesson1';">Lesson 1: Interacting with a Teacher</button>
+            <button onclick="window.location.href = '/lesson2';">Lesson 2: Interacting with a Friend</button>
+            <button onclick="window.location.href = '/lesson3';">Lesson 3: Interacting with a Professional</button>
+            <button onclick="window.location.href = '/lesson4';">Lesson 4: Interacting with Strangers</button>
+        </div>
+    </div>
+
+    <div id="practice-text">
+        <p>Practice with the chatbot by entering text in the input field below and clicking "Send." The chatbot will provide responses and engage in conversations to help you practice your communication skills.</p>
+    </div>
+
+    <div id="chatbot">
+        <div id="chatbox"></div>
+        <input type="text" id="userInput" placeholder="Say something...">
+        <button id="sendButton" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById("userInput").value;
+            document.getElementById("chatbox").innerHTML += "<p>You: " + userInput + "</p>";
+            document.getElementById("userInput").value = "";
+
+            fetch('/get-response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("chatbox").innerHTML += "<p>Bot: " + data.reply + "</p>";
+            });
+        }
+    </script>
+</body>
+</html>

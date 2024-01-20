@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 1: Interacting with a Teacher</title>
+    <style>
+        .question-container {
+            display: flex;
+            align-items: center;
+        }
+        .question {
+            flex: 1;
+        }
+        .image {
+            flex: 0.2;
+            padding-left: 10px;
+        }
+        .image img {
+            max-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lesson 1: Interacting with a Teacher</h1>
+    <p>Interacting with a teacher or instructor requires a respectful and attentive approach. Here are some tips for effective communication:</p>
+    <ul>
+        <li>Address them with their appropriate title (e.g., Mr., Ms., Professor).</li>
+        <li>Be polite and use formal language, especially in educational settings.</li>
+        <li>Ask questions when you need clarification on a topic.</li>
+        <li>Listen actively and engage in discussions related to the subject.</li>
+    </ul>
+    <p>Remember, teachers appreciate students who are eager to learn and show respect in their interactions.</p>
+
+    <!-- Multiple Choice Questions -->
+    <div class="question-container">
+        <div class="question">
+            <p>Quiz Question 1: What is an important aspect of interacting with a teacher?</p>
+            <form>
+                <input type="radio" name="question1" value="A"> Using informal language<br>
+                <input type="radio" name="question1" value="B"> Addressing with appropriate titles<br>
+                <input type="radio" name="question1" value="C"> Avoiding questions<br>
+                <input type="radio" name="question1" value="D"> Ignoring discussions<br>
+            </form>
+            <p id="answer1"></p>
+        </div>
+        <div class="image">
+            <img id="image_q1" style="display:none;" src="https://th.bing.com/th/id/OIP.CPK1ANm7nhe0n8ZVgQgFlQHaHG?rs=1&pid=ImgDetMain" alt="Correct Image">
+        </div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">
+            <p>Quiz Question 2: When should you ask questions to a teacher?</p>
+            <form>
+                <input type="radio" name="question2" value="A"> Never<br>
+                <input type="radio" name="question2" value="B"> Only when you have a lot of questions<br>
+                <input type="radio" name="question2" value="C"> When you need clarification<br>
+                <input type="radio" name="question2" value="D"> In every conversation<br>
+            </form>
+            <p id="answer2"></p>
+        </div>
+        <div class="image">
+            <img id="image_q2" style="display:none;" src="https://th.bing.com/th/id/OIP.CPK1ANm7nhe0n8ZVgQgFlQHaHG?rs=1&pid=ImgDetMain" alt="Correct Image">
+        </div>
+    </div>
+
+    <div class="question-container">
+        <div class="question">
+            <p>Quiz Question 3: How should you address your teacher?</p>
+            <form>
+                <input type="radio" name="question3" value="A"> Using their first name<br>
+                <input type="radio" name="question3" value="B"> Using their appropriate title (e.g., Mr., Ms., Professor)<br>
+                <input type="radio" name="question3" value="C"> Using a nickname<br>
+                <input type="radio" name="question3" value="D"> Not addressing them<br>
+            </form>
+            <p id="answer3"></p>
+        </div>
+        <div class="image">
+            <img id="image_q3" style="display:none;" src="https://th.bing.com/th/id/OIP.CPK1ANm7nhe0n8ZVgQgFlQHaHG?rs=1&pid=ImgDetMain" alt="Correct Image">
+        </div>
+    </div>
+
+    <!-- Button to Check Answers -->
+    <button onclick="checkAnswers()">Check Answers</button>
+
+    <!-- Button to Go Back to Homepage -->
+    <a href="/">Back to Homepage</a>
+
+    <script>
+        function checkAnswers() {
+            var answer1 = document.querySelector('input[name="question1"]:checked').value;
+            var answer2 = document.querySelector('input[name="question2"]:checked').value;
+            var answer3 = document.querySelector('input[name="question3"]:checked').value;
+
+            var answer1Feedback = answer1 === "B" ? "Correct!" : "Incorrect. Addressing with appropriate titles is important when interacting with a teacher.";
+            var answer2Feedback = answer2 === "C" ? "Correct!" : "Incorrect. You should ask questions when you need clarification on a topic.";
+            var answer3Feedback = answer3 === "B" ? "Correct!" : "Incorrect. You should use their appropriate title (e.g., Mr., Ms., Professor).";
+
+            document.getElementById("answer1").innerHTML = "Quiz Question 1: " + answer1Feedback;
+            document.getElementById("answer2").innerHTML = "Quiz Question 2: " + answer2Feedback;
+            document.getElementById("answer3").innerHTML = "Quiz Question 3: " + answer3Feedback;
+
+            // Display the image next to the correctly answered question
+            if (answer1 === "B") {
+                document.getElementById("image_q1").style.display = "inline";
+            }
+            if (answer2 === "C") {
+                document.getElementById("image_q2").style.display = "inline";
+            }
+            if (answer3 === "B") {
+                document.getElementById("image_q3").style.display = "inline";
+            }
+        }
+    </script>
+</body>
+</html>
